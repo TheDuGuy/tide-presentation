@@ -1,0 +1,1623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driving Share of Spend on Tide POS Devices | Edou Mota - PDF Version</title>
+    <style>
+        :root {
+            --primary-blue: #2E31BE;
+            --navy: #001E60;
+            --light-bg: #F5F7FF;
+            --white: #FFFFFF;
+            --accent-green: #17C964;
+            --gray-100: #F1F5F9;
+            --gray-200: #E2E8F0;
+            --gray-300: #CBD5E1;
+            --gray-400: #94A3B8;
+            --gray-500: #64748B;
+            --gray-600: #475569;
+            --gray-800: #1E293B;
+        }
+
+        @page {
+            size: 1280px 720px;
+            margin: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        html, body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+            background: var(--white);
+            color: var(--gray-800);
+        }
+
+        .slide {
+            width: 1280px;
+            height: 720px;
+            padding: 48px 64px;
+            position: relative;
+            page-break-after: always;
+            page-break-inside: avoid;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .slide:last-child {
+            page-break-after: auto;
+        }
+
+        /* ===== TITLE SLIDE ===== */
+        .slide.title-slide {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--navy) 100%);
+            color: var(--white);
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding: 64px 80px;
+        }
+
+        .title-content {
+            max-width: 55%;
+        }
+
+        .title-content h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+
+        .title-subtitle {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.4rem;
+            font-weight: 400;
+            opacity: 0.95;
+        }
+
+        .title-footer {
+            font-size: 0.95rem;
+            opacity: 0.7;
+            position: absolute;
+            bottom: 48px;
+            left: 80px;
+        }
+
+        .title-visual {
+            position: relative;
+            width: 420px;
+            height: 500px;
+        }
+
+        .phone-mockup {
+            width: 260px;
+            height: 500px;
+            background: var(--white);
+            border-radius: 40px;
+            position: absolute;
+            right: 40px;
+            top: 0;
+            box-shadow: 0 30px 60px -15px rgba(0,0,0,0.3);
+            padding: 14px;
+        }
+
+        .phone-screen {
+            width: 100%;
+            height: 100%;
+            background: var(--light-bg);
+            border-radius: 30px;
+            padding: 28px 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .phone-header {
+            font-size: 0.85rem;
+            color: var(--gray-600);
+            margin-bottom: 16px;
+        }
+
+        .phone-balance {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 24px;
+        }
+
+        .phone-actions {
+            display: flex;
+            gap: 12px;
+        }
+
+        .phone-action {
+            width: 52px;
+            height: 52px;
+            background: var(--primary-blue);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .phone-action svg {
+            width: 24px;
+            height: 24px;
+            stroke: white;
+        }
+
+        .card-mockup {
+            width: 240px;
+            height: 150px;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, #4B4EE8 100%);
+            border-radius: 16px;
+            position: absolute;
+            left: -20px;
+            bottom: 60px;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.35);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card-chip {
+            width: 36px;
+            height: 28px;
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            border-radius: 5px;
+        }
+
+        .card-logo {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: white;
+            letter-spacing: 0.05em;
+        }
+
+        .contactless-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        /* ===== CONTENT SLIDES ===== */
+        .slide-header {
+            margin-bottom: 36px;
+        }
+
+        .slide-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 12px;
+        }
+
+        .slide h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--navy);
+            line-height: 1.2;
+        }
+
+        .slide-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            flex: 1;
+        }
+
+        .bullets {
+            list-style: none;
+            font-size: 1.15rem;
+            line-height: 1.7;
+        }
+
+        .bullets li {
+            margin-bottom: 14px;
+            padding-left: 28px;
+            position: relative;
+        }
+
+        .bullets li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 8px;
+            height: 8px;
+            background: var(--primary-blue);
+            border-radius: 50%;
+        }
+
+        .bullets li.check::before {
+            content: "✓";
+            background: var(--accent-green);
+            color: white;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            font-size: 0.7rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            top: 4px;
+        }
+
+        .bullets strong {
+            color: var(--navy);
+        }
+
+        .sub-bullets {
+            list-style: none;
+            margin-top: 10px;
+            margin-left: 4px;
+        }
+
+        .sub-bullets li {
+            font-size: 1rem;
+            color: var(--gray-600);
+            margin-bottom: 8px;
+            padding-left: 20px;
+        }
+
+        .sub-bullets li::before {
+            width: 6px;
+            height: 6px;
+            background: var(--gray-400);
+            top: 9px;
+        }
+
+        .speaker-hint {
+            margin-top: auto;
+            padding: 20px 24px;
+            background: var(--light-bg);
+            border-left: 4px solid var(--primary-blue);
+            border-radius: 0 12px 12px 0;
+            font-size: 0.95rem;
+            color: var(--gray-600);
+            font-style: italic;
+            max-width: 700px;
+        }
+
+        .speaker-hint-label {
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 6px;
+            font-style: normal;
+        }
+
+        /* Terminals */
+        .terminals-illustration {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 50px;
+            height: 100%;
+        }
+
+        .terminal {
+            width: 200px;
+            height: 340px;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 40px;
+            position: relative;
+        }
+
+        .terminal.competitor {
+            background: #9CA3AF;
+            opacity: 0.7;
+        }
+
+        .terminal.tide {
+            background: var(--primary-blue);
+            box-shadow: 0 40px 80px -20px rgba(46, 49, 190, 0.5);
+            transform: scale(1.12);
+        }
+
+        .terminal-screen {
+            width: 150px;
+            height: 110px;
+            background: var(--gray-800);
+            border-radius: 8px;
+            margin-bottom: 28px;
+        }
+
+        .terminal.tide .terminal-screen {
+            background: var(--navy);
+        }
+
+        .terminal-keypad {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            padding: 0 24px;
+        }
+
+        .terminal-key {
+            width: 36px;
+            height: 26px;
+            background: rgba(255,255,255,0.4);
+            border-radius: 5px;
+        }
+
+        .terminal.competitor .terminal-key {
+            background: #6B7280;
+        }
+
+        .terminal-label {
+            position: absolute;
+            bottom: -44px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--gray-600);
+        }
+
+        .terminal.tide .terminal-label {
+            color: var(--primary-blue);
+        }
+
+        .terminal-glow {
+            position: absolute;
+            top: -16px;
+            right: -16px;
+        }
+
+        /* Segments */
+        .segments-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .segment-card {
+            background: var(--white);
+            border: 2px solid var(--gray-200);
+            border-radius: 16px;
+            padding: 24px 20px;
+            text-align: center;
+        }
+
+        .segment-card.idle { border-top: 4px solid #EF4444; }
+        .segment-card.competitor-heavy { border-top: 4px solid #F59E0B; }
+        .segment-card.tide-leaning { border-top: 4px solid #3B82F6; }
+        .segment-card.loyalist { border-top: 4px solid var(--accent-green); }
+
+        .segment-silhouette {
+            margin: 0 auto 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .segment-card h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 8px;
+        }
+
+        .segment-card p {
+            font-size: 0.9rem;
+            color: var(--gray-600);
+        }
+
+        .segment-tagline {
+            text-align: center;
+            margin-top: 28px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--navy);
+        }
+
+        /* Strategy pills */
+        .strategies-layout {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 48px;
+        }
+
+        .strategies-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .strategy-pill {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 18px 24px;
+            background: var(--white);
+            border: 2px solid var(--gray-200);
+            border-radius: 12px;
+        }
+
+        .strategy-num {
+            width: 36px;
+            height: 36px;
+            background: var(--primary-blue);
+            color: var(--white);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .strategy-text {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--gray-800);
+        }
+
+        .strategy-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        /* Progress bar */
+        .progress-visual {
+            background: var(--light-bg);
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 24px;
+        }
+
+        .progress-track {
+            height: 24px;
+            background: var(--gray-200);
+            border-radius: 12px;
+            position: relative;
+            margin-bottom: 16px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-blue) 0%, #4B4EE8 100%);
+            border-radius: 12px;
+            width: 65%;
+            position: relative;
+        }
+
+        .progress-fill::after {
+            content: "65%";
+            position: absolute;
+            right: -8px;
+            top: -28px;
+            background: var(--navy);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .progress-milestones {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: var(--gray-600);
+            font-weight: 500;
+        }
+
+        .progress-milestone.active {
+            color: var(--primary-blue);
+            font-weight: 700;
+        }
+
+        /* Three columns */
+        .three-col {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .col-card {
+            background: var(--white);
+            border: 2px solid var(--gray-200);
+            border-radius: 16px;
+            padding: 24px;
+        }
+
+        .col-card h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .col-icon {
+            width: 32px;
+            height: 32px;
+            background: var(--primary-blue);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .col-icon svg {
+            width: 18px;
+            height: 18px;
+            stroke: white;
+        }
+
+        .col-card .bullets {
+            font-size: 0.95rem;
+        }
+
+        .col-card .bullets li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+        }
+
+        .col-card .bullets li::before {
+            width: 6px;
+            height: 6px;
+            top: 9px;
+        }
+
+        /* Survey */
+        .survey-card {
+            background: var(--light-bg);
+            border-radius: 16px;
+            padding: 28px;
+        }
+
+        .survey-question {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 20px;
+        }
+
+        .survey-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .survey-chip {
+            background: var(--white);
+            border: 2px solid var(--gray-200);
+            border-radius: 20px;
+            padding: 8px 16px;
+            font-size: 0.85rem;
+            color: var(--gray-600);
+        }
+
+        /* Barrier cards */
+        .barrier-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .barrier-card {
+            background: var(--white);
+            border: 2px solid var(--gray-200);
+            border-radius: 12px;
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .barrier-icon {
+            width: 36px;
+            height: 36px;
+            background: var(--light-bg);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .barrier-content h4 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 4px;
+        }
+
+        .barrier-content p {
+            font-size: 0.8rem;
+            color: var(--gray-600);
+        }
+
+        /* Timeline */
+        .timeline-horizontal {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            position: relative;
+        }
+
+        .timeline-horizontal::before {
+            content: "";
+            position: absolute;
+            top: 24px;
+            left: 80px;
+            right: 80px;
+            height: 4px;
+            background: var(--gray-200);
+            border-radius: 2px;
+        }
+
+        .timeline-step {
+            text-align: center;
+            position: relative;
+        }
+
+        .timeline-dot {
+            width: 48px;
+            height: 48px;
+            background: var(--primary-blue);
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .timeline-step h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 12px;
+        }
+
+        .timeline-step p {
+            font-size: 0.9rem;
+            color: var(--gray-600);
+        }
+
+        /* KPI */
+        .kpi-layout {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 40px;
+        }
+
+        .kpi-chart {
+            background: var(--light-bg);
+            border-radius: 16px;
+            padding: 32px;
+        }
+
+        .chart-title {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--gray-600);
+            margin-bottom: 24px;
+        }
+
+        .chart-bars {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-around;
+            height: 180px;
+            gap: 16px;
+        }
+
+        .chart-bar-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .chart-bar {
+            width: 40px;
+            background: var(--primary-blue);
+            border-radius: 6px 6px 0 0;
+        }
+
+        .chart-label {
+            font-size: 0.75rem;
+            color: var(--gray-600);
+        }
+
+        .kpi-groups {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .kpi-group {
+            background: var(--white);
+            border: 2px solid var(--gray-200);
+            border-radius: 16px;
+            padding: 24px;
+        }
+
+        .kpi-group h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Testimonial */
+        .slide.testimonial-slide {
+            background: var(--navy);
+            color: var(--white);
+            padding: 64px 80px;
+        }
+
+        .testimonial-slide .slide-label {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .testimonial-slide h2 {
+            color: var(--white);
+            margin-bottom: 40px;
+        }
+
+        .testimonial-content {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 48px;
+        }
+
+        .testimonial-image {
+            width: 280px;
+            height: 320px;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, #4B4EE8 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .testimonial-placeholder {
+            font-size: 4rem;
+        }
+
+        .testimonial-quote {
+            font-size: 1.3rem;
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 32px;
+            padding-left: 20px;
+            border-left: 4px solid var(--primary-blue);
+        }
+
+        .journey-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .journey-step {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+
+        .journey-num {
+            width: 28px;
+            height: 28px;
+            background: var(--primary-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .journey-step p {
+            font-size: 1rem;
+            line-height: 1.5;
+            opacity: 0.95;
+        }
+
+        /* Roadmap */
+        .roadmap-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .roadmap-phase {
+            background: var(--white);
+            border: 2px solid var(--gray-200);
+            border-radius: 16px;
+            padding: 28px;
+            position: relative;
+        }
+
+        .roadmap-phase::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            border-radius: 16px 16px 0 0;
+        }
+
+        .roadmap-phase:nth-child(1)::before { background: var(--primary-blue); }
+        .roadmap-phase:nth-child(2)::before { background: #4B4EE8; }
+        .roadmap-phase:nth-child(3)::before { background: var(--accent-green); }
+
+        .roadmap-header {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .roadmap-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 16px;
+        }
+
+        .roadmap-phase .bullets {
+            font-size: 0.95rem;
+        }
+
+        .roadmap-phase .bullets li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+        }
+
+        .roadmap-phase .bullets li::before {
+            width: 6px;
+            height: 6px;
+            top: 9px;
+        }
+
+        /* Thank you */
+        .slide.thank-you-slide {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--navy) 100%);
+            color: var(--white);
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .thank-you-slide h2 {
+            color: var(--white);
+            font-size: 3.5rem;
+            margin-bottom: 16px;
+        }
+
+        .thank-you-slide .subtitle {
+            font-size: 1.5rem;
+            font-weight: 400;
+            opacity: 0.9;
+            margin-bottom: 32px;
+        }
+
+        .thank-you-slide .note {
+            font-size: 1rem;
+            opacity: 0.75;
+        }
+
+        .thank-you-visual {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .slide-number {
+            position: absolute;
+            bottom: 20px;
+            right: 32px;
+            font-size: 0.85rem;
+            color: var(--gray-400);
+            font-weight: 500;
+        }
+
+        .slide.title-slide .slide-number,
+        .slide.testimonial-slide .slide-number,
+        .slide.thank-you-slide .slide-number {
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* Light bg slides */
+        .slide.light-bg {
+            background: var(--light-bg);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SLIDE 1: TITLE -->
+    <div class="slide title-slide">
+        <div class="title-content">
+            <h1>Driving Share of Spend on Tide POS Devices</h1>
+            <div class="title-subtitle">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M16 20v6M12 26h8" stroke-linecap="round"/>
+                    <path d="M10 16c0-3.3 2.7-6 6-6s6 2.7 6 6" stroke-linecap="round" fill="none"/>
+                    <path d="M6 16c0-5.5 4.5-10 10-10s10 4.5 10 10" stroke-linecap="round" fill="none" opacity="0.6"/>
+                    <circle cx="16" cy="16" r="2" fill="currentColor" stroke="none"/>
+                </svg>
+                Making Tide the "First Tap" for SME Payments
+            </div>
+        </div>
+        <div class="title-visual">
+            <div class="phone-mockup">
+                <div class="phone-screen">
+                    <div class="phone-header">Main business account</div>
+                    <div class="phone-balance">£4,500.00</div>
+                    <div class="phone-actions">
+                        <div class="phone-action">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 5v14M5 12h14" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <div class="phone-action">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M19 12H5M12 5l-7 7 7 7" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="phone-action">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="6" width="18" height="12" rx="2"/>
+                                <path d="M3 10h18"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-mockup">
+                <div class="contactless-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                        <path d="M8 18c0-4.4 3.6-8 8-8" stroke-linecap="round"/>
+                        <path d="M8 14c0-2.2 1.8-4 4-4" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="card-chip"></div>
+                <div class="card-logo">tide</div>
+            </div>
+        </div>
+        <div class="title-footer">Senior CRM Manager – Acquiring · Case Study · Edou Mota</div>
+        <div class="slide-number">1 / 13</div>
+    </div>
+
+    <!-- SLIDE 2: CHALLENGE -->
+    <div class="slide light-bg">
+        <div class="slide-header">
+            <div class="slide-label">The Challenge</div>
+            <h2>From "I Own Tide POS" to "I Use Tide POS"</h2>
+        </div>
+        <div class="slide-content">
+            <div class="two-col">
+                <div>
+                    <ul class="bullets">
+                        <li class="check"><strong>Tide POS devices are selling well</strong></li>
+                        <li>Many merchants still route most volume through competitor devices</li>
+                        <li>This is a <strong>behaviour / share-of-wallet problem</strong>, not a hardware sales problem</li>
+                        <li><strong>CRM's job:</strong> make Tide the first tap at the point of payment</li>
+                    </ul>
+                    <div class="speaker-hint" style="margin-top: 32px;">
+                        <div class="speaker-hint-label">Speaker Note</div>
+                        "Right now Tide POS is sometimes like an app on page 4 of the phone – installed but not on the home screen of their habits."
+                    </div>
+                </div>
+                <div class="terminals-illustration">
+                    <div class="terminal competitor">
+                        <div class="terminal-screen"></div>
+                        <div class="terminal-keypad">
+                            <div class="terminal-key"></div>
+                            <div class="terminal-key"></div>
+                            <div class="terminal-key"></div>
+                            <div class="terminal-key"></div>
+                            <div class="terminal-key"></div>
+                            <div class="terminal-key"></div>
+                        </div>
+                        <div class="terminal-label">Competitor</div>
+                    </div>
+                    <div class="terminal tide">
+                        <div class="terminal-glow">
+                            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5">
+                                <path d="M6 18c0-5.5 4.5-10 10-10" stroke-linecap="round"/>
+                                <path d="M6 14c0-3.3 2.7-6 6-6" stroke-linecap="round"/>
+                                <path d="M6 10c0-1.1 0.9-2 2-2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <div class="terminal-screen"></div>
+                        <div class="terminal-keypad">
+                            <div class="terminal-key"></div>
+                            <div class="terminal-key"></div>
+                            <div class="terminal-key"></div>
+                            <div class="terminal-key"></div>
+                            <div class="terminal-key"></div>
+                            <div class="terminal-key"></div>
+                        </div>
+                        <div class="terminal-label">Tide POS</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slide-number">2 / 13</div>
+    </div>
+
+    <!-- SLIDE 3: SEGMENTATION -->
+    <div class="slide">
+        <div class="slide-header">
+            <div class="slide-label">Behavioural Lens</div>
+            <h2>Who Are We Trying to Influence?</h2>
+        </div>
+        <div class="slide-content">
+            <div class="segments-grid">
+                <div class="segment-card idle">
+                    <div class="segment-silhouette">
+                        <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                            <circle cx="40" cy="24" r="12" fill="#EF4444" opacity="0.25"/>
+                            <path d="M20 68c0-11 9-20 20-20s20 9 20 20" fill="#EF4444" opacity="0.25"/>
+                            <text x="52" y="20" fill="#EF4444" font-size="12" font-weight="700" opacity="0.6">z</text>
+                            <text x="58" y="14" fill="#EF4444" font-size="10" font-weight="700" opacity="0.5">z</text>
+                        </svg>
+                    </div>
+                    <h3>Installed but Idle</h3>
+                    <p>Has Tide POS, almost all volume on competitor.</p>
+                </div>
+                <div class="segment-card competitor-heavy">
+                    <div class="segment-silhouette">
+                        <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                            <circle cx="28" cy="24" r="10" fill="#9CA3AF" opacity="0.9"/>
+                            <path d="M12 64c0-9 7-16 16-16s16 7 16 16" fill="#9CA3AF" opacity="0.9"/>
+                            <circle cx="52" cy="28" r="8" fill="#F59E0B" opacity="0.4"/>
+                            <path d="M40 64c0-7 5-12 12-12s12 5 12 12" fill="#F59E0B" opacity="0.4"/>
+                        </svg>
+                    </div>
+                    <h3>Dual User – Competitor Heavy</h3>
+                    <p>Uses both, competitor gets majority share.</p>
+                </div>
+                <div class="segment-card tide-leaning">
+                    <div class="segment-silhouette">
+                        <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                            <circle cx="28" cy="28" r="8" fill="#9CA3AF" opacity="0.4"/>
+                            <path d="M16 64c0-7 5-12 12-12s12 5 12 12" fill="#9CA3AF" opacity="0.4"/>
+                            <circle cx="52" cy="24" r="10" fill="#3B82F6" opacity="0.9"/>
+                            <path d="M36 64c0-9 7-16 16-16s16 7 16 16" fill="#3B82F6" opacity="0.9"/>
+                        </svg>
+                    </div>
+                    <h3>Dual User – Tide Leaning</h3>
+                    <p>Tide gets decent share, still some competitor volume.</p>
+                </div>
+                <div class="segment-card loyalist">
+                    <div class="segment-silhouette">
+                        <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                            <circle cx="40" cy="24" r="12" fill="#17C964" opacity="0.9"/>
+                            <path d="M20 68c0-11 9-20 20-20s20 9 20 20" fill="#17C964" opacity="0.9"/>
+                            <circle cx="56" cy="18" r="10" fill="#17C964"/>
+                            <path d="M56 12l1.5 3 3.5.5-2.5 2.5.5 3.5-3-1.5-3 1.5.5-3.5-2.5-2.5 3.5-.5z" fill="white"/>
+                        </svg>
+                    </div>
+                    <h3>Tide Loyalist (control)</h3>
+                    <p>Almost all card volume through Tide.</p>
+                </div>
+            </div>
+            <p class="segment-tagline">Different behaviour → Different message</p>
+        </div>
+        <div class="slide-number">3 / 13</div>
+    </div>
+
+    <!-- SLIDE 4: 5 STRATEGIES -->
+    <div class="slide light-bg">
+        <div class="slide-header">
+            <div class="slide-label">Strategic Framework</div>
+            <h2>5 CRM Strategies to Make Tide the First Tap</h2>
+        </div>
+        <div class="slide-content">
+            <div class="strategies-layout">
+                <div style="display: flex; align-items: center; justify-content: center;">
+                    <svg width="180" height="180" viewBox="0 0 180 180" fill="none">
+                        <circle cx="90" cy="90" r="80" stroke="#E2E8F0" stroke-width="8" fill="none"/>
+                        <circle cx="90" cy="90" r="80" stroke="#2E31BE" stroke-width="8" fill="none" stroke-dasharray="502" stroke-dashoffset="100" stroke-linecap="round"/>
+                        <text x="90" y="85" text-anchor="middle" fill="#001E60" font-size="42" font-weight="700">5</text>
+                        <text x="90" y="110" text-anchor="middle" fill="#475569" font-size="14">Strategies</text>
+                    </svg>
+                </div>
+                <ol class="strategies-list">
+                    <li class="strategy-pill">
+                        <span class="strategy-num">1</span>
+                        <span class="strategy-text"><strong>Make Tide the default</strong> – post-purchase "switch" journeys</span>
+                    </li>
+                    <li class="strategy-pill">
+                        <span class="strategy-num">2</span>
+                        <span class="strategy-text"><strong>Win the first £X of volume</strong> – targeted incentive programmes</span>
+                    </li>
+                    <li class="strategy-pill">
+                        <span class="strategy-num">3</span>
+                        <span class="strategy-text"><strong>Build habit at the moment of choice</strong> – behavioural nudges</span>
+                    </li>
+                    <li class="strategy-pill">
+                        <span class="strategy-num">4</span>
+                        <span class="strategy-text"><strong>Use feedback to remove barriers</strong> – CX-led journeys</span>
+                    </li>
+                    <li class="strategy-pill">
+                        <span class="strategy-num">5</span>
+                        <span class="strategy-text"><strong>Always-on test & learn</strong> – continuous optimisation & personalisation</span>
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <div class="slide-number">4 / 13</div>
+    </div>
+
+    <!-- SLIDE 5: STRATEGY 1 -->
+    <div class="slide">
+        <div class="slide-header">
+            <div class="strategy-badge">Strategy 1</div>
+            <h2>Make Tide the Default Terminal</h2>
+        </div>
+        <div class="slide-content">
+            <div class="two-col">
+                <div>
+                    <p style="font-size: 1.15rem; line-height: 1.7; color: #475569; margin-bottom: 24px;">
+                        Every POS sale should trigger a <strong style="color: #001E60;">switch-focused onboarding journey</strong>, not just a generic welcome.
+                    </p>
+                    <div style="background: #F5F7FF; border-radius: 12px; padding: 20px;">
+                        <div style="font-size: 0.8rem; font-weight: 600; color: #2E31BE; margin-bottom: 12px;">GOAL</div>
+                        <div style="display: flex; align-items: center; gap: 12px; font-size: 1.1rem;">
+                            <span style="color: #475569;">"I own Tide POS"</span>
+                            <span style="color: #2E31BE;">→</span>
+                            <span style="color: #001E60; font-weight: 600;">"I've fully switched to Tide"</span>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <ul class="bullets">
+                        <li><strong>Trigger:</strong> POS device sale or activation</li>
+                        <li><strong>Onboarding journey:</strong>
+                            <ul class="sub-bullets">
+                                <li>"How to switch from your old terminal to Tide"</li>
+                                <li>Checklist: configure → test → train staff → place device</li>
+                            </ul>
+                        </li>
+                        <li><strong>Channels:</strong> Email + in-app (optional SMS)</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="margin-top: 32px; display: flex; align-items: center; justify-content: center; gap: 16px;">
+                <div style="background: #F5F7FF; border-radius: 12px; padding: 20px 28px; text-align: center;">
+                    <div style="font-size: 0.85rem; font-weight: 600; color: #001E60;">Welcome email</div>
+                    <div style="font-size: 0.75rem; color: #475569;">Day 0</div>
+                </div>
+                <span style="color: #94A3B8;">→</span>
+                <div style="background: #F5F7FF; border-radius: 12px; padding: 20px 28px; text-align: center;">
+                    <div style="font-size: 0.85rem; font-weight: 600; color: #001E60;">In-app checklist</div>
+                    <div style="font-size: 0.75rem; color: #475569;">Day 1–3</div>
+                </div>
+                <span style="color: #94A3B8;">→</span>
+                <div style="background: #F5F7FF; border-radius: 12px; padding: 20px 28px; text-align: center;">
+                    <div style="font-size: 0.85rem; font-weight: 600; color: #001E60;">Setup complete</div>
+                    <div style="font-size: 0.75rem; color: #475569;">Day 5–7</div>
+                </div>
+                <span style="color: #94A3B8;">→</span>
+                <div style="background: #2E31BE; border-radius: 12px; padding: 20px 28px; text-align: center;">
+                    <div style="font-size: 0.85rem; font-weight: 600; color: white;">First tap!</div>
+                    <div style="font-size: 0.75rem; color: rgba(255,255,255,0.8);">Tide = default</div>
+                </div>
+            </div>
+        </div>
+        <div class="slide-number">5 / 13</div>
+    </div>
+
+    <!-- SLIDE 6: STRATEGY 2 -->
+    <div class="slide light-bg">
+        <div class="slide-header">
+            <div class="strategy-badge">Strategy 2</div>
+            <h2>Win the First £1,000 with Tide</h2>
+        </div>
+        <div class="slide-content">
+            <div class="progress-visual">
+                <div class="progress-track">
+                    <div class="progress-fill"></div>
+                </div>
+                <div class="progress-milestones">
+                    <span class="progress-milestone active">£0</span>
+                    <span class="progress-milestone active">£250</span>
+                    <span class="progress-milestone active">£500</span>
+                    <span class="progress-milestone">£750</span>
+                    <span class="progress-milestone">£1,000</span>
+                </div>
+            </div>
+            <div class="two-col">
+                <div>
+                    <ul class="bullets">
+                        <li><strong>Time-bound challenge:</strong> "Process your first £1,000 on Tide in 30 days"</li>
+                        <li><strong>Test different rewards:</strong>
+                            <ul class="sub-bullets">
+                                <li>Reduced fees on that tranche</li>
+                                <li>Small cashback / statement credit</li>
+                                <li>Entry into a prize draw</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <ul class="bullets">
+                        <li><strong>CRM journey:</strong>
+                            <ul class="sub-bullets">
+                                <li>Kickoff email + in-app banner</li>
+                                <li>Progress updates ("You're 65% of the way there")</li>
+                                <li>Celebration + reward when target is hit</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="slide-number">6 / 13</div>
+    </div>
+
+    <!-- SLIDE 7: STRATEGY 3 -->
+    <div class="slide">
+        <div class="slide-header">
+            <div class="strategy-badge">Strategy 3</div>
+            <h2>Behavioural Nudges at the Right Time</h2>
+        </div>
+        <div class="slide-content">
+            <div class="three-col">
+                <div class="col-card">
+                    <h3>
+                        <span class="col-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </span>
+                        Triggers
+                    </h3>
+                    <ul class="bullets">
+                        <li>Long gap since last Tide POS transaction</li>
+                        <li>Sudden drop in Tide share vs merchant's usual pattern</li>
+                    </ul>
+                </div>
+                <div class="col-card">
+                    <h3>
+                        <span class="col-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </span>
+                        Nudges
+                    </h3>
+                    <ul class="bullets">
+                        <li>"Your Tide POS is ready for your next customer."</li>
+                        <li>"Busy weekend ahead? Make Tide your first tap."</li>
+                    </ul>
+                </div>
+                <div class="col-card">
+                    <h3>
+                        <span class="col-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </span>
+                        Channels
+                    </h3>
+                    <ul class="bullets">
+                        <li>Email</li>
+                        <li>In-app</li>
+                        <li>Push (if available)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="slide-number">7 / 13</div>
+    </div>
+
+    <!-- SLIDE 8: STRATEGY 4 -->
+    <div class="slide light-bg">
+        <div class="slide-header">
+            <div class="strategy-badge">Strategy 4</div>
+            <h2>Find & Fix the Reasons They Don't Tap Tide</h2>
+        </div>
+        <div class="slide-content">
+            <div class="two-col">
+                <div class="survey-card">
+                    <div class="survey-question">"What most often stops you using Tide POS instead of your other terminal?"</div>
+                    <div class="survey-options">
+                        <span class="survey-chip">Speed / reliability concerns</span>
+                        <span class="survey-chip">Missing features / integrations</span>
+                        <span class="survey-chip">Staff habit / muscle memory</span>
+                        <span class="survey-chip">Fees / settlement perceptions</span>
+                    </div>
+                </div>
+                <div class="barrier-cards">
+                    <div class="barrier-card">
+                        <div class="barrier-icon">⚡</div>
+                        <div class="barrier-content">
+                            <h4>Speed / Reliability</h4>
+                            <p>Education & reassurance – share performance data</p>
+                        </div>
+                    </div>
+                    <div class="barrier-card">
+                        <div class="barrier-icon">🔧</div>
+                        <div class="barrier-content">
+                            <h4>Missing Features</h4>
+                            <p>Honest product-roadmap comms where gaps remain</p>
+                        </div>
+                    </div>
+                    <div class="barrier-card">
+                        <div class="barrier-icon">👥</div>
+                        <div class="barrier-content">
+                            <h4>Staff Habit</h4>
+                            <p>Training tips & quick-start guides for team</p>
+                        </div>
+                    </div>
+                    <div class="barrier-card">
+                        <div class="barrier-icon">💷</div>
+                        <div class="barrier-content">
+                            <h4>Fee Perceptions</h4>
+                            <p>Clear fee comparison & settlement explainers</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slide-number">8 / 13</div>
+    </div>
+
+    <!-- SLIDE 9: STRATEGY 5 -->
+    <div class="slide">
+        <div class="slide-header">
+            <div class="strategy-badge">Strategy 5</div>
+            <h2>Test, Learn, Personalise</h2>
+        </div>
+        <div class="slide-content">
+            <div class="timeline-horizontal">
+                <div class="timeline-step">
+                    <div class="timeline-dot">1</div>
+                    <h3>Test Value Props</h3>
+                    <p>"Faster cashflow" vs "all-in-one" vs "less admin" – find what resonates.</p>
+                </div>
+                <div class="timeline-step">
+                    <div class="timeline-dot">2</div>
+                    <h3>Test Incentives & Timing</h3>
+                    <p>Fee discounts vs cashback vs prizes. Optimise frequency and sequence.</p>
+                </div>
+                <div class="timeline-step">
+                    <div class="timeline-dot">3</div>
+                    <h3>Personalise by Segment</h3>
+                    <p>Different examples for cafés, salons, trades. Tailored offers.</p>
+                </div>
+            </div>
+            <div style="margin-top: 40px; display: flex; align-items: center; justify-content: center; gap: 24px;">
+                <div style="background: #F5F7FF; border-radius: 16px; padding: 24px; width: 260px; position: relative;">
+                    <div style="position: absolute; top: -12px; left: 20px; background: #2E31BE; color: white; font-size: 0.75rem; font-weight: 700; padding: 4px 12px; border-radius: 12px;">TEST A</div>
+                    <div style="font-size: 0.9rem; font-weight: 600; color: #001E60; margin-top: 8px;">"Get faster cashflow with Tide"</div>
+                    <div style="display: flex; gap: 20px; margin-top: 12px;">
+                        <div><span style="font-size: 1.3rem; font-weight: 700; color: #2E31BE;">24%</span><br><span style="font-size: 0.7rem; color: #64748B;">Open</span></div>
+                        <div><span style="font-size: 1.3rem; font-weight: 700; color: #2E31BE;">8%</span><br><span style="font-size: 0.7rem; color: #64748B;">Click</span></div>
+                    </div>
+                </div>
+                <div style="width: 48px; height: 48px; background: #001E60; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700;">VS</div>
+                <div style="background: #F5F7FF; border-radius: 16px; padding: 24px; width: 260px; position: relative; border: 2px solid #17C964;">
+                    <div style="position: absolute; top: -12px; left: 20px; background: #17C964; color: white; font-size: 0.75rem; font-weight: 700; padding: 4px 12px; border-radius: 12px;">TEST B ✓</div>
+                    <div style="font-size: 0.9rem; font-weight: 600; color: #001E60; margin-top: 8px;">"All your payments in one place"</div>
+                    <div style="display: flex; gap: 20px; margin-top: 12px;">
+                        <div><span style="font-size: 1.3rem; font-weight: 700; color: #17C964;">31%</span><br><span style="font-size: 0.7rem; color: #64748B;">Open</span></div>
+                        <div><span style="font-size: 1.3rem; font-weight: 700; color: #17C964;">12%</span><br><span style="font-size: 0.7rem; color: #64748B;">Click</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slide-number">9 / 13</div>
+    </div>
+
+    <!-- SLIDE 10: KPIs -->
+    <div class="slide light-bg">
+        <div class="slide-header">
+            <div class="slide-label">Measurement</div>
+            <h2>How We'll Know It's Working</h2>
+        </div>
+        <div class="slide-content">
+            <div class="kpi-layout">
+                <div class="kpi-chart">
+                    <div class="chart-title">Tide Share of Spend (Dual Users)</div>
+                    <div class="chart-bars">
+                        <div class="chart-bar-group">
+                            <div class="chart-bar" style="height: 60px; background: #9CA3AF;"></div>
+                            <div class="chart-bar" style="height: 80px;"></div>
+                            <span class="chart-label">Q1</span>
+                        </div>
+                        <div class="chart-bar-group">
+                            <div class="chart-bar" style="height: 50px; background: #9CA3AF;"></div>
+                            <div class="chart-bar" style="height: 100px;"></div>
+                            <span class="chart-label">Q2</span>
+                        </div>
+                        <div class="chart-bar-group">
+                            <div class="chart-bar" style="height: 40px; background: #9CA3AF;"></div>
+                            <div class="chart-bar" style="height: 130px;"></div>
+                            <span class="chart-label">Q3</span>
+                        </div>
+                        <div class="chart-bar-group">
+                            <div class="chart-bar" style="height: 30px; background: #9CA3AF;"></div>
+                            <div class="chart-bar" style="height: 160px;"></div>
+                            <span class="chart-label">Q4</span>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 16px; margin-top: 16px; justify-content: center; font-size: 0.8rem;">
+                        <span>■ Competitor</span>
+                        <span style="color: #2E31BE;">■ Tide</span>
+                    </div>
+                </div>
+                <div class="kpi-groups">
+                    <div class="kpi-group">
+                        <h3>📊 Business KPIs</h3>
+                        <ul class="bullets">
+                            <li>Tide share-of-spend vs competitor(s) for dual users</li>
+                            <li>% of POS merchants hitting first £X within N days</li>
+                            <li>3- and 6-month retention of POS activity</li>
+                        </ul>
+                    </div>
+                    <div class="kpi-group">
+                        <h3>📈 Programme / Channel KPIs</h3>
+                        <ul class="bullets">
+                            <li>Enrolment & completion of "first £X" challenge</li>
+                            <li>Onboarding & nudge engagement (open, click, action)</li>
+                            <li>Unsubscribe & complaint rates (list health)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slide-number">10 / 13</div>
+    </div>
+
+    <!-- SLIDE 11: TESTIMONIAL -->
+    <div class="slide testimonial-slide">
+        <div class="slide-header">
+            <div class="slide-label">Example Journey</div>
+            <h2>Sara – Café Owner</h2>
+        </div>
+        <div class="slide-content">
+            <div class="testimonial-content">
+                <div class="testimonial-image">
+                    <div class="testimonial-placeholder">☕</div>
+                </div>
+                <div class="testimonial-details">
+                    <div class="testimonial-quote">
+                        "Once I switched most card payments to Tide, my end-of-day reconciliation got much easier."
+                    </div>
+                    <div class="journey-steps">
+                        <div class="journey-step">
+                            <div class="journey-num">1</div>
+                            <p>Buys Tide POS → gets "Make Tide default" onboarding</p>
+                        </div>
+                        <div class="journey-step">
+                            <div class="journey-num">2</div>
+                            <p>Joins "First £1,000" challenge → receives progress updates</p>
+                        </div>
+                        <div class="journey-step">
+                            <div class="journey-num">3</div>
+                            <p>Hits target → reward + reinforced "Tide as default" message</p>
+                        </div>
+                        <div class="journey-step">
+                            <div class="journey-num">4</div>
+                            <p>Later dip → behavioural nudge + barrier survey → right journey</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slide-number">11 / 13</div>
+    </div>
+
+    <!-- SLIDE 12: 90-DAY PLAN -->
+    <div class="slide">
+        <div class="slide-header">
+            <div class="slide-label">Execution</div>
+            <h2>First 90 Days – How I'd Execute</h2>
+        </div>
+        <div class="slide-content">
+            <div class="roadmap-grid">
+                <div class="roadmap-phase">
+                    <div class="roadmap-header">0–30 Days</div>
+                    <div class="roadmap-title">Discover & Define</div>
+                    <ul class="bullets">
+                        <li>Deep dive into POS & CRM data</li>
+                        <li>Map existing journeys & touchpoints</li>
+                        <li>Define share-of-spend KPIs</li>
+                        <li>Fix obvious QA issues in comms</li>
+                    </ul>
+                </div>
+                <div class="roadmap-phase">
+                    <div class="roadmap-header">30–60 Days</div>
+                    <div class="roadmap-title">Launch v1 Programmes</div>
+                    <ul class="bullets">
+                        <li>Launch "Make Tide default" onboarding</li>
+                        <li>Launch "First £X" challenge</li>
+                        <li>Set up dashboards & basic A/B tests</li>
+                    </ul>
+                </div>
+                <div class="roadmap-phase">
+                    <div class="roadmap-header">60–90 Days</div>
+                    <div class="roadmap-title">Scale & Optimise</div>
+                    <ul class="bullets">
+                        <li>Add behavioural nudges & feedback journeys</li>
+                        <li>Expand to more segments / verticals</li>
+                        <li>Formalise test roadmap & present results</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="speaker-hint" style="margin-top: 32px;">
+                <div class="speaker-hint-label">Speaker Note</div>
+                "Buying Tide POS is like buying a gym membership – the value comes when you actually go regularly."
+            </div>
+        </div>
+        <div class="slide-number">12 / 13</div>
+    </div>
+
+    <!-- SLIDE 13: THANK YOU -->
+    <div class="slide thank-you-slide">
+        <div class="thank-you-visual">
+            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5">
+                <rect x="16" y="8" width="32" height="48" rx="4" fill="none"/>
+                <rect x="22" y="14" width="20" height="14" rx="2" fill="rgba(255,255,255,0.2)"/>
+                <circle cx="32" cy="42" r="6" fill="none"/>
+                <path d="M40 24c0-4.4 3.6-8 8-8" stroke-linecap="round"/>
+                <path d="M44 24c0-2.2 1.8-4 4-4" stroke-linecap="round"/>
+            </svg>
+        </div>
+        <h2>Thank You</h2>
+        <p class="subtitle">Questions?</p>
+        <p class="note">Happy to go deeper on data, journeys, or implementation.</p>
+        <div class="slide-number">13 / 13</div>
+    </div>
+
+</body>
+</html>

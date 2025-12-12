@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Driving share of spend on Tide POS devices | Edou Mota</title>
+    <title>Driving share of spend on Tide POS devices | Edou Mota - PDF Version</title>
     <style>
         :root {
             --primary-blue: #2E31BE;
@@ -24,36 +24,41 @@
             box-sizing: border-box;
         }
 
+        @page {
+            size: 1280px 720px;
+            margin: 0;
+        }
+
         html, body {
             font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
             background: var(--white);
             color: var(--gray-800);
-            overflow: hidden;
-            height: 100%;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
         }
 
         .slides-container {
-            height: 100vh;
-            overflow: hidden;
-            position: relative;
+            /* No special styling for print */
         }
 
         .slide {
-            display: none;
-            height: 100vh;
+            width: 1280px;
+            height: 720px;
             padding: 48px 64px;
             position: relative;
-            animation: fadeIn 0.3s ease-out;
-        }
-
-        .slide.active {
             display: flex;
             flex-direction: column;
+            page-break-after: always;
+            page-break-inside: avoid;
+            overflow: hidden;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        .slide:last-child {
+            page-break-after: auto;
+        }
+
+        .nav-progress {
+            display: none;
         }
 
         /* ===== TITLE SLIDE ===== */
@@ -1061,31 +1066,13 @@
             margin-bottom: 40px;
         }
 
-        /* ===== PROGRESS BAR (NAVIGATION) ===== */
-        .nav-progress {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--gray-200);
-            z-index: 100;
-        }
-
-        .nav-progress-fill {
-            height: 100%;
-            background: var(--primary-blue);
-            transition: width 0.3s ease;
-        }
-
         .slide-counter {
-            position: fixed;
+            position: absolute;
             bottom: 20px;
             right: 32px;
             font-size: 0.85rem;
             color: var(--gray-400);
             font-weight: 500;
-            z-index: 100;
         }
 
         .slide.title-slide .slide-counter,
@@ -1094,42 +1081,13 @@
             color: rgba(255,255,255,0.5);
         }
 
-        /* ===== PRINT STYLES ===== */
-        @media print {
-            .slides-container {
-                overflow: visible;
-                height: auto;
-            }
-
-            .slide {
-                display: flex !important;
-                height: 100vh;
-                page-break-after: always;
-                page-break-inside: avoid;
-                animation: none;
-            }
-
-            .slide:last-child {
-                page-break-after: auto;
-            }
-
-            .nav-progress,
-            .slide-counter {
-                display: none;
-            }
-        }
-
-        @page {
-            size: 16in 9in;
-            margin: 0;
-        }
     </style>
 </head>
 <body>
     <div class="slides-container">
 
         <!-- ===== SLIDE 1: TITLE ===== -->
-        <div class="slide title-slide active">
+        <div class="slide title-slide">
             <div class="title-content">
                 <h1>Driving share of spend on Tide POS devices</h1>
                 <div class="title-subtitle">
@@ -2037,90 +1995,21 @@
 
     </div>
 
-    <div class="nav-progress">
-        <div class="nav-progress-fill" id="progress"></div>
-    </div>
-
-    <script>
-        const slides = document.querySelectorAll('.slide');
-        let currentSlide = 0;
-
-        function showSlide(index) {
-            if (index < 0) index = 0;
-            if (index >= slides.length) index = slides.length - 1;
-
-            slides.forEach(slide => slide.classList.remove('active'));
-            slides[index].classList.add('active');
-            currentSlide = index;
-
-            // Update progress
-            const progress = ((index + 1) / slides.length) * 100;
-            document.getElementById('progress').style.width = progress + '%';
-        }
-
-        // Keyboard navigation
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ' || e.key === 'PageDown') {
-                e.preventDefault();
-                showSlide(currentSlide + 1);
-            } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp' || e.key === 'PageUp') {
-                e.preventDefault();
-                showSlide(currentSlide - 1);
-            } else if (e.key === 'Home') {
-                e.preventDefault();
-                showSlide(0);
-            } else if (e.key === 'End') {
-                e.preventDefault();
-                showSlide(slides.length - 1);
-            }
-        });
-
-        // Click navigation
-        document.addEventListener('click', (e) => {
-            const x = e.clientX;
-            const width = window.innerWidth;
-            if (x > width * 0.65) {
-                showSlide(currentSlide + 1);
-            } else if (x < width * 0.35) {
-                showSlide(currentSlide - 1);
-            }
-        });
-
-        // Touch/swipe support
-        let touchStartX = 0;
-        document.addEventListener('touchstart', (e) => {
-            touchStartX = e.touches[0].clientX;
-        });
-        document.addEventListener('touchend', (e) => {
-            const diff = touchStartX - e.changedTouches[0].clientX;
-            if (Math.abs(diff) > 50) {
-                showSlide(diff > 0 ? currentSlide + 1 : currentSlide - 1);
-            }
-        });
-
-        showSlide(0);
-    </script>
-
     <!--
     ============================================================
-    NAVIGATION & EXPORT INSTRUCTIONS
+    PDF EXPORT INSTRUCTIONS
     ============================================================
 
-    HOW TO NAVIGATE:
-    • Arrow keys (← →) or Page Up/Down to move between slides
-    • Spacebar to advance
-    • Click right side of screen to go forward, left side to go back
-    • Swipe on touch devices
-    • Home/End keys to jump to first/last slide
+    This file is optimized for PDF export. All slides are visible
+    in a vertical stack for easy printing.
 
     HOW TO EXPORT TO PDF:
-    1. Open in Chrome or Safari
+    1. Open this file in Chrome or Safari
     2. Press Cmd+P (Mac) or Ctrl+P (Windows)
     3. Set "Destination" to "Save as PDF"
-    4. Set "Layout" to "Landscape"
-    5. Set "Paper size" to "Tabloid" or "A3" for best results
-    6. Enable "Background graphics" in More settings
-    7. Click Save
+    4. Set "Paper size" to match slide dimensions (or use "Custom")
+    5. Enable "Background graphics" in More settings
+    6. Click Save
 
     Each slide will appear on its own page in the PDF.
     ============================================================
